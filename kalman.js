@@ -14,13 +14,16 @@ export default class Kalman {
   /**
    * @param {number[][]} f
    * @param {number[][]} g
-   * @param {number[][]} h
    * @param {number[][]} q
+   * 
+   * @param {number[][]} h
    * @param {number[][]} r
+   * 
    * @param {number[]} y_
+   * 
    * @return {mathjs.Matrix}
    */
-  observe(f, g, h, q, r, y_) {
+  observe(f, g, q, h, r, y_) {
     let F = math.matrix(f);
     let G = math.matrix(g);
     let H = math.matrix(h);
