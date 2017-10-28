@@ -20,7 +20,7 @@ function norm(){
 
 describe('test', () => {
   it('with noize', () => {
-    let k = new Kalman([10], [10]);
+    let k = new Kalman(/*x0*/ [10], /* P0 */ [10]); /* E[(x0)(x0^T)] = P0 */
     /** @type {mathjs.Matrix} */
     let r;
     for(let i=0;i<1000;i++) {
