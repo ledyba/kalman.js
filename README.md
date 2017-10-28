@@ -26,8 +26,8 @@ describe('test', () => {
     for(let i=0;i<1000;i++) {
       let y = 1 + norm(0.1);
       r = k.observe(
-        /* F */ [1], /* G */ [1], /* Q */ [0],
-        /* H */ [1],              /* R */ [0.1],
+        /* F */ [1], /* G */ [1], /* Q */ [0], /* x'=Fx + Gw, w~N(0,Q) */
+        /* H */ [1],              /* R */ [0.1], /* y=Hx + v, v~N(0,R) */
         /*y*/ [y]);
     }
     expect(math.pow(r.get([0]) - 1, 2)).lessThan(0.1);
