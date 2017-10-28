@@ -38,5 +38,7 @@ describe('test', () => {
         /*y*/ y);
     }
     expect(math.pow(r.get([0]) - 1, 2)).lessThan(0.1);
+    expect(math.pow(r.get([1]) - 1, 2)).lessThan(0.1);
+    expect(math.pow(r.get([2]) - 1, 2)).lessThan(0.1);
   });
 });
