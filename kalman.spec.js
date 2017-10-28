@@ -23,4 +23,20 @@ describe('test', () => {
     }
     expect(math.pow(r.get([0]) - 1, 2)).lessThan(0.1);
   });
+  it('multiple dimension', () => {
+    let I = [[1,0,0], [0,1,0], [0,0,1]];
+    let Z = [[0,0,0], [0,0,0], [0,0,0]];
+    let R = [[10,0,0], [0,10,0], [0,0,10]];
+    let k = new Kalman(/*x0*/ [1,2,3], /* P0 */ I);
+    /** @type {mathjs.Matrix} */
+    let r;
+    for(let i=0;i<1000;i++) {
+      let y = [1 + norm(1), 1+norm(1), 1+norm(1)];
+      r = k.observe(
+        /* F */ I, /* G */ I,   /* Q */ Z,
+        /* H */ I,              /* R */ R,
+        /*y*/ y);
+    }
+    expect(math.pow(r.get([0]) - 1, 2)).lessThan(0.1);
+  });
 });
