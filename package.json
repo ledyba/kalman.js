@@ -1,6 +1,6 @@
 {
   "name": "kalman.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Kalman filter implementation",
   "main": "kalman.js",
   "scripts": {
